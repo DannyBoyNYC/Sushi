@@ -2,12 +2,10 @@ var body = document.querySelector("body");
 document.addEventListener("click", handleClicks);
 
 function handleClicks(e) {
-  if (e.target.matches(".map")) {
-    body.classList.add("showme");
+  if (e.target.matches(".map") || e.target.matches(".closer")) {
+    body.classList.toggle("showme");
     e.preventDefault();
-  }
-  if (e.target.matches(".closer")) {
+  } else {
     body.classList.remove("showme");
-    e.preventDefault();
   }
 }
